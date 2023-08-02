@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from pathlib import Path
 import csv_reports
 
@@ -18,17 +18,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #get the day and cash on hand for each day
         cashonhand.append([row[0],row[1]])  
 print(cashonhand) 
-=======
 
-
-cash= 0 
-
-for jf in cash:
-    if i :
-
-
-
->>>>>>> 20582b2 (first)
 
 
 
