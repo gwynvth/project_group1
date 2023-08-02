@@ -24,6 +24,8 @@ print(cashonhand)
 cash= 0 
 
 for jf in cash:
+    if i :
+
 
 
 >>>>>>> 20582b2 (first)
