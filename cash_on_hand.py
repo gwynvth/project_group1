@@ -23,7 +23,7 @@ print(cashonhand)
 
 ufdthfyf 
 
-
+for jf in di:
 
 
 >>>>>>> 20582b2 (first)
