@@ -21,9 +21,9 @@ print(cashonhand)
 =======
 
 
-ufdthfyf 
+cash= 0 
 
-for jf in di:
+for jf in cash:
 
 
 >>>>>>> 20582b2 (first)
