@@ -21,6 +21,8 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 print(cashonhand)
 
 for item in cashonhand:
+    if row[1] < row[1]:
+
   
 
 
