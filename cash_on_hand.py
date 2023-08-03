@@ -1,23 +1,27 @@
-
+import csv
 from pathlib import Path
-import csv_reports
 
-# create a file to csv file.
-fp = Path.cwd()/"Cash_On_Hand.csv"
+# create a file to csv file. 
+fp = Path.cwd()/"csv_reports"/"Cash_On_Hand.csv"
 
 # read the csv file to append profit and quantity from the csv.
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
-    reader = csv_reports.reader(file)
+    reader = csv.reader(file)
     next(reader) # skip header
 
-    # create an empty lists to store day and cash on hand records
+    # create an empty lists to store time sheet and sales record
     cashonhand=[] 
 
-    # append cash on hand record into the cashonhand list
+    # append time sheet and sales record into the salesRecords list
     for row in reader:
-        #get the day and cash on hand for each day
-        cashonhand.append([row[0],row[1]])  
-print(cashonhand) 
+        #get the employee id, toal hours, break hours, and sales for each record
+        #and append the salesRecords list
+        cashonhand.append([row[0],row[1]])   
+
+print(cashonhand)
+
+
+# for days in cash on hand:
 
 
 
