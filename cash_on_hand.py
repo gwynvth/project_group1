@@ -22,7 +22,6 @@ print(cashonhand)
 
 def cash_on_hand_data(cashonhand):
     highestincrement=0
-    lowestincrement= 0
     difference=[]
 
     for item in range(1,len(cashonhand)):
