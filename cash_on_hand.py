@@ -20,8 +20,22 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 print(cashonhand)
 
-for item in cashonhand:
-    if row[1] < row[1]:
+def cash_on_hand_data(cashonhand):
+    highestincrement=0
+    lowestincrement= 0
+    difference=[]
+
+    for item in range(1,len(cashonhand)):
+        diff=cashonhand[item] - cashonhand[item-1]
+        differnce.append(diff)
+
+        if diff > highestincrement:
+            highestincrement=diff
+            highestincrementday=item
+    return difference, highestincrementday, highestincrement
+
+
+
 
   
 
