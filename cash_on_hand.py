@@ -20,8 +20,9 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 print(cashonhand)
 
+for item in cashonhand:
+  
 
-# for days in cash on hand:
 
 
 
