@@ -27,7 +27,7 @@ def cash_on_hand_data(cashonhand):
 
     for item in range(1,len(cashonhand)):
         diff=cashonhand[item] - cashonhand[item-1]
-        differnce.append(diff)
+        difference.append(diff)
 
         if diff > highestincrement:
             highestincrement=diff
