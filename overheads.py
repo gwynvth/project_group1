@@ -4,18 +4,18 @@ from pathlib import Path
 # create a file to csv file. 
 fp = Path.cwd()/"csv_reports"/"Overheads.csv"
 
-# read the csv file to append profit and quantity  from the csv.
+# read the csv file to find the highest overhead category from the csv.
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader) # skip header
 
-    # create an empty lists to store time sheet and sales record
+    # create an empty lists to store the expenses
     Overheads=[] 
 
-    # append time sheet and sales record into the salesRecords list
+    # append expenses and their respective percentage into the Overheads list
     for row in reader:
-        #get the employee id, toal hours, break hours, and sales for each record
-        #and append the salesRecords list
+        #get the percentage for each expenses
+        #and append the Overheads list
         Overheads.append([row[0],row[1]])  
 
 #print(Overheads)
