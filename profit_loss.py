@@ -67,8 +67,8 @@ if aCashsurplus(ProfitsandLoss):
     for cashsurplus in cashsurpluslist:
         day = cashsurplus[0]
         cash = cashsurplus[1]
-        sentence = f"[CASH SURPLUS] Day: {day}, AMOUNT: USD{cash}\n"
-        result += sentence
+        # sentence = f"[CASH SURPLUS] Day: {day}, AMOUNT: USD{cash}\n"
+        # result += sentence
 
     result += f"\n[HIGHEST SURPLUS] Day: {highestSurplusDay}, AMOUNT: USD{highestSurplus}\n"
     # print(result)
@@ -93,20 +93,19 @@ def calculate_cash_deficit(data):
         cash = int(cdeficit[1]) # Extract the net profit for the day
 
         # Calculate the daily deficit based on the difference with the previous day's deficit
-        # daily_deficit = previousdaydeficit - cash
+        pd = previousdaydeficit - cash
 
-        if previousdaydeficit >= 0:
-            pd = previousdaydeficit - cash
-            # If there's a profit deficit, add it to the profitdeficit list
-            if pd > 0:
-                profitdeficit.append((day, cash - previousdaydeficit))
-
+        
+        # If there's a profit deficit, add it to the profitdeficit list
+        if pd > 0:
+            profitdeficit.append((day, - pd))
         # Update the previousdaydeficit with the current day's deficit for the next iteration
         previousdaydeficit = cash
 
     return profitdeficit
 
-# Call the function to calculate profit deficit and get the result
+
+# # Call the function to calculate profit deficit and get the result
 profitdeficitlist = calculate_cash_deficit(ProfitsandLoss)
 
 # Generate a formatted string with the details of each day's profit deficit
@@ -115,5 +114,5 @@ for profitd in profitdeficitlist:
     cash = profitd[1]
     sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{cash}\n"
     result += sentence
- 
+
 print(profitdeficitlist)
