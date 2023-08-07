@@ -55,13 +55,13 @@ for day, cash_on_hand in cashonhand:
     previous_cash_on_hand = cash_on_hand
 
 # Calculate the final Cash-on-Hand
-final_cash_on_hand = previous_cash_on_hand + total_cash_difference
+final_cash_on_hand = int(previous_cash_on_hand + total_cash_difference)
 
 # Output the results
-print(f"Difference in Cash-on-Hand: {total_cash_difference}")
+print(f"Difference in Cash-on-Hand: {int(total_cash_difference)}")
 print(f"Final Cash-on-Hand: {final_cash_on_hand}")
 print(f"Day of the highest increment: {max_increment_day}")
-print(f"Amount of the highest increment: {max_increment_amount}")
+print(f"Amount of the highest increment: {int(max_increment_amount)}")
 
 
 
