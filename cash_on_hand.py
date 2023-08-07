@@ -17,7 +17,6 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #get the employee id, toal hours, break hours, and sales for each record
         #and append the salesRecords list
         cashonhand.append([row[0],row[1]])   
-
 print(cashonhand)
 
 # def cash_on_hand_data(cashonhand):
