@@ -23,7 +23,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 
 Highest_expense_name = None 
-Highest_expense_amount = 0.0 
+Highest_expense_amount = 0
  
 # Loop through the data to find the highest overhead expense 
 for item in Overheads: 
