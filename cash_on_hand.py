@@ -45,7 +45,7 @@ cash_on_hand = row[1]
 # Loop through the data
 for day, cash_on_hand in cashonhand:
     if previous_cash_on_hand is not None:
-        difference = previous_cash_on_hand - cash_on_hand
+        difference = int({previous_cash_on_hand} - {cash_on_hand})
         total_cash_difference += difference
         if difference > max_increment:
             max_increment = difference
