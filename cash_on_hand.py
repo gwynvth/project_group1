@@ -73,10 +73,10 @@ def compute_difference(cashonhand):
     differences = []
 
     for item in range(1, len(cashonhand)):
-        day, coh = int(cashonhand[item][0]), int(cashonhand[item][1])
-        prev_coh = int(cashonhand[item - 1][1])
+        day, COH = int(cashonhand[item][0]), int(cashonhand[item][1])
+        prev_COH = int(cashonhand[item - 1][1])
 
-        difference = coh - prev_coh
+        difference = COH - prev_COH
         differences.append((day, difference))
 
         if difference > highest_increment:
