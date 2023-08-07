@@ -115,5 +115,5 @@ for profitd in profitdeficitlist:
     cash = profitd[1]
     sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{cash}\n"
     result += sentence
-
+ 
 print(profitdeficitlist)
