@@ -98,7 +98,7 @@ def calculate_cash_deficit(data):
         
         # If there's a profit deficit, add it to the profitdeficit list
         if pd > 0:
-            profitdeficit.append((day, - pd))
+            profitdeficit.append((day, abs(pd)))
         # Update the previousdaydeficit with the current day's deficit for the next iteration
         previousdaydeficit = cash
 
