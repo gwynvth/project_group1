@@ -46,7 +46,7 @@ for day, difference in differences:
 #elif difference > 0:
         #print(f"[CASH SURPLUS] Day: {day}, AMOUNT: USD{difference}")
 
-print(f"\nDay with the highest increment: Day {highest_increment_day}, Increment: {highest_increment}")
+#print(f"\nDay with the highest increment: Day {highest_increment_day}, Increment: {highest_increment}")
 
 
 
