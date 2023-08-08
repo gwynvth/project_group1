@@ -17,7 +17,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #get the employee id, toal hours, break hours, and sales for each record
         #and append the salesRecords list
         cashonhand.append([row[0],row[1]])   
-print(cashonhand)
+#print(cashonhand)
 
 
 def compute_difference(cashonhand):
@@ -40,14 +40,13 @@ def compute_difference(cashonhand):
 
 differences, highest_increment_day, highest_increment = compute_difference(cashonhand)
 
-print("Differences in COH between consecutive days:")
 for day, difference in differences:
     if difference < 0:
         print(f"[CASH DEFICIT] Day: {day}, AMOUNT: USD{abs(difference)}")
 #elif difference > 0:
         #print(f"[CASH SURPLUS] Day: {day}, AMOUNT: USD{difference}")
 
-print(f"\nDay with the highest increment: Day {highest_increment_day}, Increment: {highest_increment}")
+#print(f"\nDay with the highest increment: Day {highest_increment_day}, Increment: {highest_increment}")
 
 
 
