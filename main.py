@@ -1,9 +1,19 @@
 from pathlib import Path
-import overheads, cash_on_hand, profit_loss
+import overheads
+import cash_on_hand
+import profit_loss
 
 def main():
-    overheads.Overheads_function(forex)
-    cash_on_hand.cashonhand_function(forex)
-    profit_loss.ProfitsandLoss_function(forex)
+    overheads_result = overheads.overheads_function()
+    cash_on_hand_result = cash_on_hand.cash_on_hand()
+    profit_and_loss_result = profit_loss.profit_and_loss_function()
 
-main()
+    # Write the results to the summary_report.txt file 
+    with open('summary_report.txt', 'w') as file:
+
+        file.write(overheads_result + '\n')
+        file.write(cash_on_hand_result + '\n')
+        file.write(profit_and_loss_result + '\n')
+
+if __name__ == "__main__":
+    main()

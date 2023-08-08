@@ -79,40 +79,68 @@ else:
     result = ""
 
 # Define a function to calculate the profit deficit 
-def calculate_cash_deficit(data):
-    """
-    -This function will calculate the profit deficit if net profit on
-    the current day is lower than the previous day
-    -Required parameters are days and net profit
-    """
+# def profit_and_loss_function(data):
+#     """
+#     -This function will calculate the profit deficit if net profit on
+#     the current day is lower than the previous day
+#     -Required parameters are days and net profit
+#     """
+#     profitdeficit = []       # A list to store data
+#     previousdaydeficit = 0   # Set initial previous day's deficit to 0
+
+#     for cdeficit in data:
+#         day = int(cdeficit[0])  # Extract the days from the data
+#         cash = int(cdeficit[1]) # Extract the net profit for the day
+
+#         # Calculate the daily deficit based on the difference with the previous day's deficit
+#         pd = previousdaydeficit - cash
+
+        
+#         # If there's a profit deficit, add it to the profitdeficit list
+#         if pd > 0:
+#             profitdeficit.append((day, abs(pd)))
+#         # Update the previousdaydeficit with the current day's deficit for the next iteration
+#         previousdaydeficit = cash
+
+#     return profitdeficit
+
+
+# # # Call the function to calculate profit deficit and get the result
+# profitdeficitlist = profit_and_loss_function(ProfitsandLoss)
+
+# # Generate a formatted string with the details of each day's profit deficit
+# for profitd in profitdeficitlist:
+#     day = profitd[0]
+#     cash = profitd[1]
+#     sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{cash}\n"
+#     result += sentence
+
+# print(result)
+
+def profit_and_loss_function():
     profitdeficit = []       # A list to store data
     previousdaydeficit = 0   # Set initial previous day's deficit to 0
+    result = ""
 
-    for cdeficit in data:
+    for cdeficit in ProfitsandLoss:
         day = int(cdeficit[0])  # Extract the days from the data
         cash = int(cdeficit[1]) # Extract the net profit for the day
 
         # Calculate the daily deficit based on the difference with the previous day's deficit
         pd = previousdaydeficit - cash
 
-        
         # If there's a profit deficit, add it to the profitdeficit list
         if pd > 0:
             profitdeficit.append((day, abs(pd)))
+            sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{abs(pd)}\n"
+            result += sentence
+        
         # Update the previousdaydeficit with the current day's deficit for the next iteration
         previousdaydeficit = cash
 
-    return profitdeficit
+    return result
 
+# Call the function to get the result
+profit_and_loss_result = profit_and_loss_function()
 
-# # Call the function to calculate profit deficit and get the result
-profitdeficitlist = calculate_cash_deficit(ProfitsandLoss)
-
-# Generate a formatted string with the details of each day's profit deficit
-for profitd in profitdeficitlist:
-    day = profitd[0]
-    cash = profitd[1]
-    sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{cash}\n"
-    result += sentence
-
-print(result)
+print(profit_and_loss_result)
