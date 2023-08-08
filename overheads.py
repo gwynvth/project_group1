@@ -20,22 +20,29 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 #print(Overheads)
 
+def overheads_function(overhead_data):
+    highest_expense_name = None
+    highest_expense_amount = 0
 
+    # Loop through the data to find the highest overhead expense
+    for item in overhead_data:
+        expense_name = item[0]
+        expense_amount = float(item[1])
 
-Highest_expense_name = None 
-Highest_expense_amount = 0
- 
-# Loop through the data to find the highest overhead expense 
-for item in Overheads: 
-    expense_name = item[0] 
-    expense_amount = float(item[1]) 
-     
-    if expense_amount > Highest_expense_amount: 
-        Highest_expense_amount = expense_amount 
-        Highest_expense_name = expense_name 
- 
-print(f"[HIGHEST OVERHEAD]: {Highest_expense_name.upper()} : {Highest_expense_amount}%")
+        if expense_amount > highest_expense_amount:
+            highest_expense_amount = expense_amount
+            highest_expense_name = expense_name
 
+    highest_overheads = (highest_expense_amount / total_overheads) * 100 if total_overheads > 0 else 0
+
+    return f"[HIGHEST OVERHEAD] {highest_expense_name.upper()}: {highest_overheads:.2f}%"
+
+# Calculate the total overheads
+total_overheads = sum(float(item[1]) for item in Overheads)
+
+# Call the function and print the result
+highest_overhead_info = overheads_function(Overheads)
+print(highest_overhead_info)
 
 
 
