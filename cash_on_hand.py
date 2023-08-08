@@ -72,7 +72,7 @@ def compute_difference(cashonhand):
     highest_increment_day = None
     differences = []
 
-    for item in range(1, len(cashonhand)):
+    for item in range(1,len(cashonhand)):
         day, COH = int(cashonhand[item][0]), int(cashonhand[item][1])
         prev_COH = int(cashonhand[item - 1][1])
 
@@ -82,19 +82,46 @@ def compute_difference(cashonhand):
         if difference > highest_increment:
             highest_increment = difference
             highest_increment_day = day
-
+        
     return differences, highest_increment_day, highest_increment
 
 differences, highest_increment_day, highest_increment = compute_difference(cashonhand)
 
 print("Differences in COH between consecutive days:")
 for day, difference in differences:
-    print(f"Day {day}: {difference}")
+    if difference < 0:
+        print(f"Day {day}: {abs(difference)}")
+    elif difference > 0:
+        print(f"Day {day}: {difference}")
 
 print(f"\nDay with the highest increment: Day {highest_increment_day}, Increment: {highest_increment}")
 
+#method4 
+# create an empty lists to store cash on hand difference 
+#cashonhand=[]  
+#nextcashonhand =[] 
+ 
+    # append day and cash on hand into the cash on hand difference list 
 
-
+#for row in cashonhand: 
+#        cash = int(row[1]) 
+         
+#        index = cashonhand.index(row) 
+ 
+#        previous_day = int(cashonhand[index - 1][1]) 
+#        if cash < previous_day: 
+#            difference = previous_day - cash 
+         
+#        elif cash > previous_day: 
+#            difference = cash - previous_day 
+         
+#        else: 
+#            print("DAY1") 
+ 
+#        nextcashonhand.append(difference) 
+ 
+#nextcashonhand.pop(0) 
+#print(nextcashonhand)
 
 
 
