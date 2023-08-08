@@ -44,8 +44,8 @@ print("Differences in COH between consecutive days:")
 for day, difference in differences:
     if difference < 0:
         print(f"[CASH DEFICIT] Day: {day}, AMOUNT: USD{abs(difference)}")
-    elif difference > 0:
-        print(f"[CASH SURPLUS] Day: {day}, AMOUNT: USD{difference}")
+#elif difference > 0:
+        #print(f"[CASH SURPLUS] Day: {day}, AMOUNT: USD{difference}")
 
 print(f"\nDay with the highest increment: Day {highest_increment_day}, Increment: {highest_increment}")
 
