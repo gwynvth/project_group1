@@ -9,13 +9,13 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader) # skip header
 
-    # create an empty lists to store day and net profit afterwars
+    # create an empty lists to store day and net profit afterwards
     ProfitsandLoss=[] 
 
     # append days and net profit into the ProfitsandLoss list
     for row in reader:
-        #get the days and net profit of each day
-        #and append the ProfitsandLoss list
+        # get the days and net profit of each day
+        # and append the ProfitsandLoss list
         ProfitsandLoss.append([row[0],row[4]])   
 
 # print(ProfitsandLoss)
@@ -23,10 +23,12 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 def aCashsurplus(tako):
     """
     -This function will calculate whether the net profit earned is higher than the previous day or not
+
     -Parameters required are net profit and days
     """
     for dog in range(1, len(tako)):
-        if tako[dog][1] <= tako[dog - 1][1]:  # Check if the net profit on the current day is less than or equal to the previous day
+        # Check if the net profit on the current day is less than or equal to the previous day
+        if tako[dog][1] <= tako[dog - 1][1]:  
             return False
     return True
 
@@ -36,16 +38,18 @@ if aCashsurplus(ProfitsandLoss):
     def calculate_cash_surplus(data):
         """
         Calculate the cash surplus for each day
-        parameters required: data
         """
-        cashSurplus = []   # A list to store daily cash surplus
+        # To store daily cash surplus
+        cashSurplus = []  
         highestSurplus = 0
         highestSurplusDay = None
         prevdaydata = None
 
         for day_data in data:
-            day = int(day_data[0])     # Extract the day from the data
-            netProfits = int(day_data[1])  # Extract the net profit for the day
+             # Extract the day from the data
+            day = int(day_data[0])    
+             # Extract the net profit for the day
+            netProfits = int(day_data[1])  
 
             # Calculate the daily cash surplus based on the difference with the previous day's net profit
             if prevdaydata is not None:
@@ -74,25 +78,36 @@ if aCashsurplus(ProfitsandLoss):
     result += f"\n[HIGHEST SURPLUS] Day: {highestSurplusDay}, AMOUNT: USD{highestSurplus}\n"
     # print(result)
 
-# Initialize an empty string to store the final result
+# If there's no cash surplus, data will go to this function
 else:
-
+# Create an empty string to store
     result = ""
 
 def profit_and_loss_function():
-    profitdeficit = []       # A list to store data
-    previousdaydeficit = 0   # Set initial previous day's deficit to 0
+    """
+    -This function will calculate the profit deficit if net profit on
+    the current day is lower than the previous day
+
+    -Parameters required: None
+    """
+    # Create a list to store data
+    profitdeficit = []
+    # Set initial previous day's deficit to 0   
+    previousdaydeficit = 0   
     result = ""
 
     for cdeficit in ProfitsandLoss:
-        day = int(cdeficit[0])  # Extract the days from the data
-        cash = int(cdeficit[1]) # Extract the net profit for the day
+        # Extract days from the data
+        day = int(cdeficit[0])  
+        # Extract the net profit for the day
+        cash = int(cdeficit[1])
 
         # Calculate the daily deficit based on the difference with the previous day's deficit
         pd = previousdaydeficit - cash
 
         # If there's a profit deficit, add it to the profitdeficit list
         if pd > 0:
+            # Ensure pd is abs() to get a positive output
             profitdeficit.append((day, abs(pd)))
             sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{abs(pd)}\n"
             result += sentence
