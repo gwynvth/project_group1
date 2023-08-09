@@ -20,7 +20,12 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
 #print(overheads)
 
+#create function to determine highest overhead expense
 def overheads_function():
+    """
+    - this function is to determine highest overhead expense
+    - required parameters:none
+    """
     highest_expense_name = None
     highest_expense_amount = 0
 
