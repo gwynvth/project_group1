@@ -17,10 +17,13 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #get the day and cash 
         #and append the cashonhand list
         cashonhand.append([row[0],row[1]])   
-#print(cashonhand)
 
+#create a function to calculate difference in cash on hand between consecutive days
 def cash_on_hand():
-
+    """
+    - this function will return cash defitcit for specific days
+    - required parameters: none
+    """
     highest_increment = 0
     highest_increment_day = None
     differences = []
@@ -35,7 +38,8 @@ def cash_on_hand():
         if difference > highest_increment:
             highest_increment = difference
             highest_increment_day = day
-        
+
+    # calculate cash defitcits 
     cash_deficit_strings = []
     for day, difference in differences:
         if difference < 0:
@@ -45,6 +49,7 @@ def cash_on_hand():
 
 cash_on_hand_result = cash_on_hand()
 
+#print the output
 print(cash_on_hand_result)
 
 
