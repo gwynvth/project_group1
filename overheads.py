@@ -12,10 +12,10 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     # create an empty lists to store the expenses
     overheads=[] 
 
-    # append expenses and their respective percentage into the Overheads list
+    # append expenses and their respective percentage into the overheads list
     for row in reader:
         #get the percentage for each expenses
-        #and append the Overheads list
+        #and append the overheads list
         overheads.append([row[0],row[1]])  
 
 #print(overheads)
@@ -24,8 +24,10 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 def overheads_function():
     """
     - this function is to determine highest overhead expense
+
     - required parameters:none
     """
+    # Initialize variables to track the highest expense name and amount
     highest_expense_name = None
     highest_expense_amount = 0
 
@@ -37,10 +39,12 @@ def overheads_function():
         expense_name = item[0]
         expense_amount = float(item[1])
 
+        # Check if current overhead expense is higher than highest_expense_amount
         if expense_amount > highest_expense_amount:
             highest_expense_amount = expense_amount
             highest_expense_name = expense_name
 
+    # Calculate the final highest overhead
     highest_overheads = (highest_expense_amount / total_overheads) * 100 if total_overheads > 0 else 0
 
     return (f"[HIGHEST OVERHEAD] {highest_expense_name.upper()}: {highest_overheads}%")
@@ -48,9 +52,3 @@ def overheads_function():
 # Call the function and print the result
 highest_overhead_info = overheads_function()
 print(highest_overhead_info)
-
-
-
-
-
-
