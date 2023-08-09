@@ -47,7 +47,7 @@ def overheads_function():
 
 # Call the function and print the result
 highest_overhead_info = overheads_function()
-# print(highest_overhead_info)
+print(highest_overhead_info)
 
 
 
