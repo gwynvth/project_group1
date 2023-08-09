@@ -36,6 +36,7 @@ if aCashsurplus(ProfitsandLoss):
     def calculate_cash_surplus(data):
         """
         Calculate the cash surplus for each day
+        parameters required: data
         """
         cashSurplus = []   # A list to store daily cash surplus
         highestSurplus = 0
