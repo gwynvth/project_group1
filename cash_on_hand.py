@@ -50,7 +50,7 @@ def cash_on_hand():
 cash_on_hand_result = cash_on_hand()
 
 #print the output
-print(cash_on_hand_result)
+# print(cash_on_hand_result)
 
 
 

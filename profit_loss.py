@@ -120,4 +120,4 @@ def profit_and_loss_function():
 # Call the function to get the result
 profit_and_loss_result = profit_and_loss_function()
 
-print(profit_and_loss_result)
+# print(profit_and_loss_result)
