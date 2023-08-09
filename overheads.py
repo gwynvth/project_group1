@@ -43,7 +43,7 @@ def overheads_function():
 
     highest_overheads = (highest_expense_amount / total_overheads) * 100 if total_overheads > 0 else 0
 
-    return f"[HIGHEST OVERHEAD] {highest_expense_name.upper()}: {highest_overheads:.2f}%"
+    return (f"[HIGHEST OVERHEAD] {highest_expense_name.upper()}: {highest_overheads}%")
 
 # Call the function and print the result
 highest_overhead_info = overheads_function()
