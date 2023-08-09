@@ -23,9 +23,9 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 #create function to determine highest overhead expense
 def overheads_function():
     """
-    - this function is to determine highest overhead expense
+    - This function is to determine highest overhead expense
 
-    - required parameters:none
+    - Required parameter(s): None
     """
     # Initialize variables to track the highest expense name and amount
     highest_expense_name = None

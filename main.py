@@ -10,7 +10,7 @@ def main():
     functions from modular program to coordinate and 
     execute them into a text file.
 
-    -Parameters required: None
+    -Required parameter(s): None
     """
     
     # Calculate overheads result

@@ -27,7 +27,8 @@ def aCashsurplus(tako):
     -Parameters required are net profit and days
     """
     for dog in range(1, len(tako)):
-        # Check if the net profit on the current day is less than or equal to the previous day
+        # Check if the net profit on the current day is 
+        # less than or equal to the previous day
         if tako[dog][1] <= tako[dog - 1][1]:  
             return False
     return True
@@ -37,8 +38,9 @@ if aCashsurplus(ProfitsandLoss):
 
     def calculate_cash_surplus(data):
         """
-        Calculate the cash surplus for each day
-        parameters required: data
+        -Calculate the cash surplus for each day
+
+        -Required parameter(s): data
         """
         # To store daily cash surplus
         cashSurplus = []  
@@ -52,7 +54,8 @@ if aCashsurplus(ProfitsandLoss):
              # Extract the net profit for the day
             netProfits = int(day_data[1])  
 
-            # Calculate the daily cash surplus based on the difference with the previous day's net profit
+            # Calculate the daily cash surplus based on the difference 
+            # with the previous day's net profit
             if prevdaydata is not None:
                 cash_surplus = netProfits - prevdaydata[1]
                 cashSurplus.append((day, cash_surplus))
@@ -89,7 +92,7 @@ def profit_and_loss_function():
     -This function will calculate the profit deficit if net profit on
     the current day is lower than the previous day
 
-    -Parameters required: None
+    -Required parameter(s): None
     """
     # Create a list to store data
     profitdeficit = []
@@ -103,7 +106,8 @@ def profit_and_loss_function():
         # Extract the net profit for the day
         cash = int(cdeficit[1])
 
-        # Calculate the daily deficit based on the difference with the previous day's deficit
+        # Calculate the daily deficit based on the difference 
+        # with the previous day's deficit
         pd = previousdaydeficit - cash
 
         # If there's a profit deficit, add it to the profitdeficit list
@@ -113,7 +117,8 @@ def profit_and_loss_function():
             sentence = f"[PROFIT DEFICIT] Day: {day}, AMOUNT: USD{abs(pd)}\n"
             result += sentence
         
-        # Update the previousdaydeficit with the current day's deficit for the next iteration
+        # Update the previousdaydeficit with the current day's
+        # deficit for the next iteration
         previousdaydeficit = cash
 
     return result
